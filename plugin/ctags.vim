@@ -124,7 +124,7 @@ endif
 
 command! CTAGS let generate_tags=1|call GenerateTags()
 
-autocmd BufEnter *.c,*.cpp,*.h,*.py,*.vim
+autocmd BufEnter *.C,*.c,*.cpp,*.h,*.py,*.vim
 \   if g:ctags_statusline != 0
 \ |     let s:save_laststatus = &laststatus
 \ |     set laststatus=2
@@ -135,7 +135,7 @@ autocmd BufEnter *.c,*.cpp,*.h,*.py,*.vim
 \ | call GenerateTags()
 \ | endif
 
-autocmd BufLeave *.c,*.cpp,*.h,*.py,*.vim
+autocmd BufLeave *.C,*.c,*.cpp,*.h,*.py,*.vim
 \   if exists("s:save_laststatus")
 \ |     let &laststatus = s:save_laststatus
 \ |     unlet s:save_laststatus
@@ -143,7 +143,7 @@ autocmd BufLeave *.c,*.cpp,*.h,*.py,*.vim
 
 " Update the tags list whenever the buffer is written.
 "
-autocmd BufWritePost *.c,*.cpp,*.h,*.py,*.vim
+autocmd BufWritePost *.C,*.c,*.cpp,*.h,*.py,*.vim
 \   if (generate_tags != 0) && (g:ctags_regenerate != 0)
 \ |     call GenerateTags()
 \ | endif
